@@ -15,10 +15,9 @@ if pidof spotify &> /dev/null; then
     WINDOW_ID=$(wmctrl -l | grep "${SPOTIFY_ARTIST} - ${SPOTIFY_TITLE}\|Spotify Premium" | awk '{print $1}')
 
     # trim title of song 
-    DISPLAY_TITLE=$SPOTIFY_TITLE
-    SPOTIFY_TITLE_LENGTH=${#SPOTIFY_TITLE}
+    DISPLAY_TITLE=$SPOTIFY_TITLE  
     [ "${#DISPLAY_TITLE}" -gt "${DISPALY_TITLE_MAX_LENGTH}" ] && \
-      DISPLAY_TITLE="${SPOTIFY_TITLE:0:SPOTIFY_TITLE_LENGTH-DISPALY_TITLE_MAX_LENGTH} …"
+      DISPLAY_TITLE="${SPOTIFY_TITLE:0:DISPALY_TITLE_MAX_LENGTH} …"
       
     echo "<img>${ICON}</img>"
     echo "<txt>${SPOTIFY_ARTIST} - ${DISPLAY_TITLE}</txt>"
