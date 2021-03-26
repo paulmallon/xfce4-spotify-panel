@@ -5,6 +5,8 @@ XFCE4 panel plugin to displays current playing song. Click icon to focus the spo
 
 ![](screenshot.png)
 
+## Configuration 
+The variable `DISPALY_TITLE_MAX_LENGTH` adjusts how many chars of the song title to display. 
 
 ## Requirements
 `xfce4-panel`
