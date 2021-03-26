@@ -22,9 +22,9 @@ if pidof spotify &> /dev/null; then
     echo "<img>${ICON}</img>"
     echo "<txt>${SPOTIFY_ARTIST} - ${DISPLAY_TITLE}</txt>"
     echo "<click>xdotool windowactivate ${WINDOW_ID}</click>"
-    echo "<tool>Title  : ${SPOTIFY_TITLE}"
-    echo "Artist : ${SPOTIFY_ARTIST}"
-    echo "Album  : ${SPOTIFY_ALBUM}</tool>"
+    echo "<tool>Title      ${SPOTIFY_TITLE}"
+    echo "Artist     ${SPOTIFY_ARTIST}"
+    echo "Album   ${SPOTIFY_ALBUM}</tool>"
 else 
   echo "<img>${ICON_OFFLINE}</img>"
   echo "<tool>Spotify is not running</tool>"
