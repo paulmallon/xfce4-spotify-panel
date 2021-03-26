@@ -8,7 +8,7 @@ readonly ICON_OFFLINE="${DIR}/icons/spotify_offline.png"
 readonly DISPALY_TITLE_MAX_LENGTH=20
 
 if pidof spotify &> /dev/null; then
-    # Use the command-line Spotify controller to get song infor over dbus
+    # Use the command-line Spotify controller to get song info over dbus
     eval $(${DIR}/sp.sh eval)
 
     # grab window id 
