@@ -1,7 +1,7 @@
 # xfce4-spotify-panel
 
 ## Description 
-XFCE4 panel plugin to displays current playing song. Click icon to focus the sporify window (or lanuch spotify when not already running). Tooltip show more song information.
+A Spotify script for xfce4-genmon-plugin to displays current playing song. Click icon to focus the sporify window (or lanuch spotify when not already running). Tooltip show more song information. 
 
 ![](screenshot.png)
 
