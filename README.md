@@ -24,8 +24,10 @@ The variable `DISPALY_TITLE_MAX_LENGTH` adjusts how many chars of the song title
 Add a Generic Monitor to your xfce 4 panel. Enter path to `spotify-panel.sh` in the Command field of the Properties section of the plugin. 
 
 
-##
+## Links
 
+https://gitlab.xfce.org/panel-plugins/xfce4-genmon-plugin
 
+https://gist.github.com/wandernauta/6800547
 
 
