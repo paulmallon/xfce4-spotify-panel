@@ -7,6 +7,10 @@ readonly ICON="${DIR}/icons/spotify.png"
 readonly ICON_OFFLINE="${DIR}/icons/spotify_offline.png"
 readonly DISPALY_TITLE_MAX_LENGTH=20
 
+encode () {
+  echo $@ | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g'
+}
+
 if pidof spotify &> /dev/null; then
     # Use the command-line Spotify controller to get song info over dbus
     eval $(${DIR}/sp.sh eval)
@@ -18,13 +22,13 @@ if pidof spotify &> /dev/null; then
     DISPLAY_TITLE=$SPOTIFY_TITLE  
     [ "${#DISPLAY_TITLE}" -gt "${DISPALY_TITLE_MAX_LENGTH}" ] && \
       DISPLAY_TITLE="${SPOTIFY_TITLE:0:DISPALY_TITLE_MAX_LENGTH} …"
-      
+        
     echo "<img>${ICON}</img>"
-    echo "<txt>${SPOTIFY_ARTIST} - ${DISPLAY_TITLE}</txt>"
+    echo "<txt>$(encode ${SPOTIFY_ARTIST}) - $(encode ${DISPLAY_TITLE})</txt>"
     echo "<click>xdotool windowactivate ${WINDOW_ID}</click>"
-    echo "<tool>Title      ${SPOTIFY_TITLE}"
-    echo "Artist     ${SPOTIFY_ARTIST}"
-    echo "Album   ${SPOTIFY_ALBUM}</tool>"
+    echo "<tool>Title      $(encode ${SPOTIFY_TITLE})"
+    echo "Artist     $(encode ${SPOTIFY_ARTIST})"
+    echo "Album   $(encode ${SPOTIFY_ALBUM})</tool>"
 else 
   echo "<img>${ICON_OFFLINE}</img>"
   echo "<tool>Spotify is not running</tool>"
