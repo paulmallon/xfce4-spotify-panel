@@ -16,7 +16,7 @@ if pidof spotify &> /dev/null; then
     eval $(${DIR}/sp.sh eval)
 
     # grab window id 
-    WINDOW_ID=$(wmctrl -l | grep "${SPOTIFY_ARTIST} - ${SPOTIFY_TITLE}\|Spotify Premium" | awk '{print $1}')
+    WINDOW_ID=$(wmctrl -l | grep "${SPOTIFY_ARTIST} - ${SPOTIFY_TITLE}\|Spotify" | awk '{print $1}')
 
     # trim title of song 
     DISPLAY_TITLE=$SPOTIFY_TITLE  
